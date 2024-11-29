@@ -36,7 +36,34 @@ import 'package:openconnect_flutter/openconnect_flutter.dart';
 
 # iOS Setup
 
-hi
+### <b>1. Add Capabillity</b>
+Add <b>Network Extensions</b> capabillity on Runner's Target and enable <b>Packet Tunnel</b>
+
+<img src ='https://github.com/NavidShokoufeh/openconnect_extension/blob/main/example/sc/1.png?raw=true'>
+
+### <b>2. Add New Target</b>
+Click + button on bottom left, Choose <b>NETWORK EXTENSION</b>. And set <b>Language</b> and <b>Provider  Type</b> to <b>Objective-C</b> and <b>Packet Tunnel</b> as image below.
+
+<img src ='https://github.com/NavidShokoufeh/openconnect_extension/blob/main/example/sc/1.png?raw=true'>
+
+### <b>3. Add Capabillity to openconnect_extension</b>
+
+Repeat the step 1 for new target you created on previous step (openconnect_extension)
+
+### <b>4. Add Framework Search Path</b>
+
+Select openconnect_extension and add the following lines to your <b>Build Setting</b> > <b>Framework Search Path</b>:
+
+```
+$(SRCROOT)/.symlinks/plugins/openconnect_flutter/ios/ext
+```
+```
+$(SRCROOT)/.symlinks/plugins/openconnect_flutter/ios/openconnect
+```
+
+### <b>5. Copy Paste</b>
+
+Open openconnect_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/NavidShokoufeh/openconnect_flutter/refs/heads/main/example/ios/openconnect_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
 
 # Usage
 
