@@ -129,6 +129,25 @@ print('Last VPN status: $status');
 - **Platform:** This plugin is only supported on iOS. Android support is not currently available.
 - **Dependencies:** Ensure your iOS project is properly configured for VPN usage.
 
+## Contributions and Issues
+
+Feel free to contribute to this project by submitting pull requests or reporting issues on the [GitHub repository](https://github.com/NavidShokoufeh/openconnect_flutter).
+
+This addition emphasizes that the purpose of the plugin is to provide a secure means for web surfing using openconnect VPN connections. Adjustments can be made based on your specific requirements.
+
+## Support this Project
+
+If you find this project helpful, consider supporting it by making a donation. Major of Your contribution will spend on charity every month.
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/navidshokoufeh)
+
+[!["زرین پال"](https://cdn.zarinpal.com/badges/trustLogo/1.png)](https://zarinp.al/navid_shokoufeh)
+
+- **Bitcoin (BTC):** `bc1qgwfqm5e3fhyw879ycy23zljcxl2pvs575c3j7w`
+- **USDT (TRC20):** `TJc5v4ktoFaG3WamjY5rvSZy7v2F6tFuuE` 
+
+Thank you for your support! 🚀
+
 # License
 
 ```vbnet
