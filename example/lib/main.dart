@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:openconnect_flutter/models/openconnect_ios_configuration.dart';
-import 'package:openconnect_flutter/models/openconnect_server.dart';
-import 'package:openconnect_flutter/plugin/openconnect_flutter.dart';
+import 'package:openconnect_flutter/openconnect_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final sstpFlutterPlugin = OpenconnectFlutter();
+  final openconnectFlutterPlugin = OpenconnectFlutter();
   var connectionStatus = "disconnected";
 
   TextEditingController hostNameController = TextEditingController();
@@ -32,7 +30,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   init() async {
-    connectionStatus = await sstpFlutterPlugin.lastStatus() ?? 'disconnected';
+    connectionStatus =
+        await openconnectFlutterPlugin.lastStatus() ?? 'disconnected';
     setState(() {});
   }
 
@@ -50,11 +49,11 @@ class _MyAppState extends State<MyApp> {
         enableTLS: false,
       ),
     );
-    await sstpFlutterPlugin.setup(server: server);
+    await openconnectFlutterPlugin.setup(server: server);
   }
 
   onStatusChanged() {
-    sstpFlutterPlugin.onStatusChanged(
+    openconnectFlutterPlugin.onStatusChanged(
       onConnectedResult: () {
         setState(() {
           connectionStatus = "connected";
@@ -115,7 +114,7 @@ class _MyAppState extends State<MyApp> {
                       onPressed: () async {
                         await setupVpn();
                         try {
-                          await sstpFlutterPlugin.connect();
+                          await openconnectFlutterPlugin.connect();
                         } catch (e) {
                           debugPrint(e.toString());
                         }
@@ -123,7 +122,7 @@ class _MyAppState extends State<MyApp> {
                       child: const Text("Connect")),
                   ElevatedButton(
                       onPressed: () async {
-                        await sstpFlutterPlugin.disconnect();
+                        await openconnectFlutterPlugin.disconnect();
                       },
                       child: const Text("Disconnect"))
                 ],

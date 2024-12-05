@@ -44,7 +44,7 @@ Add <b>Network Extensions</b> capabillity on Runner's Target and enable <b>Packe
 ### <b>2. Add New Target</b>
 Click + button on bottom left, Choose <b>NETWORK EXTENSION</b>. And set <b>Language</b> and <b>Provider  Type</b> to <b>Objective-C</b> and <b>Packet Tunnel</b> as image below.
 
-<img src ='https://github.com/NavidShokoufeh/openconnect_flutter/blob/main/example/sc/1.png?raw=true'>
+<img src ='https://github.com/NavidShokoufeh/openconnect_flutter/blob/main/example/sc/2.png?raw=true'>
 
 ### <b>3. Add Capabillity to openconnect_extension</b>
 
@@ -72,17 +72,16 @@ Open openconnect_extension > PacketTunnelProvider.m and copy paste this script <
 To configure the VPN connection, use the setup method and pass an OpenconnectServer instance with the required configuration:
 
 ```dart
-import 'package:openconnect_flutter/models/openconnect_server.dart';
-import 'package:openconnect_flutter/plugin/openconnect_platform_interface.dart';
+import 'package:openconnect_flutter/openconnect_flutter.dart';
 
-final vpnPlugin = MethodChannelopenconnectFlutter();
+final openconnectFlutterPlugin = OpenconnectFlutter();
 
 final server = OpenconnectServer(
   host: 'vpn.example.com',
   port: 443,
   username: 'yourUsername',
   password: 'yourPassword',
-  iosConfiguration: IosVpnConfiguration(
+  iosConfiguration: OpenconnectIOSConfiguration(
     enableCHAP: true,
     enablePAP: false,
     enableTLS: true,
@@ -90,7 +89,7 @@ final server = OpenconnectServer(
   ),
 );
 
-bool setupSuccess = await vpnPlugin.setup(server: server);
+bool setupSuccess = await openconnectFlutterPlugin.setup(server: server);
 if (setupSuccess) {
   print('VPN setup successful!');
 }
@@ -100,7 +99,7 @@ if (setupSuccess) {
 
 To connect to the VPN:
 ```dart
-bool connectionSuccess = await vpnPlugin.connect();
+bool connectionSuccess = await openconnectFlutterPlugin.connect();
 if (connectionSuccess) {
   print('Connected to VPN successfully!');
 }
@@ -110,7 +109,7 @@ if (connectionSuccess) {
 
 To disconnect from the VPN:
 ```dart
-bool disconnectionSuccess = await vpnPlugin.disconnect();
+bool disconnectionSuccess = await openconnectFlutterPlugin.disconnect();
 if (disconnectionSuccess) {
   print('Disconnected from VPN.');
 }
@@ -120,7 +119,7 @@ if (disconnectionSuccess) {
 
 To get the last known VPN connection status:
 ```dart
-String status = await vpnPlugin.lastStatus();
+String status = await openconnectFlutterPlugin.lastStatus();
 print('Last VPN status: $status');
 ```
 

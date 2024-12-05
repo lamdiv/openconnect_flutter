@@ -4,7 +4,6 @@ import 'package:openconnect_flutter/models/openconnect_server.dart';
 import 'package:openconnect_flutter/plugin/openconnect_platform_interface.dart';
 
 class MethodChannelopenconnectFlutter extends OpenconnectFlutterPlatform {
-  @visibleForTesting
   final methodChannelCaller =
       const MethodChannel('com.navidshokoufeh.openconnect_flutter');
 
