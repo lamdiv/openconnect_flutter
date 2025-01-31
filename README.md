@@ -50,15 +50,26 @@ Click + button on bottom left, Choose <b>NETWORK EXTENSION</b>. And set <b>Langu
 
 Repeat the step 1 for new target you created on previous step (openconnect_extension)
 
-### <b>4. Add Framework Search Path</b>
+### <b>4. Add Pod dependency</b>
 
-Select openconnect_extension and add the following lines to your <b>Build Setting</b> > <b>Framework Search Path</b>:
+Open your Podfile , and add the following lines:
 
 ```
-$(SRCROOT)/.symlinks/plugins/openconnect_flutter/ios/ext
+target 'openconnect_extension' do
+  pod 'vpn_adapter_ios', :git => 'https://github.com/NavidShokoufeh/vpn_adapter_ios.git', :tag => '1.0.0'
+end
 ```
+
+And in your runner target do the same :
+
 ```
-$(SRCROOT)/.symlinks/plugins/openconnect_flutter/ios/openconnect
+target 'Runner' do
+pod 'vpn_adapter_ios', :git => 'https://github.com/NavidShokoufeh/vpn_adapter_ios.git', :tag => '1.0.0' <-- Add this line
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+end
 ```
 
 ### <b>5. Copy Paste</b>

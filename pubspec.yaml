@@ -1,6 +1,6 @@
 name: openconnect_flutter
 description: "A Flutter plugin for managing OpenConnect VPN connections"
-version: 1.0.1
+version: 1.2.0
 homepage: https://github.com/NavidShokoufeh/openconnect_flutter
 
 environment:
