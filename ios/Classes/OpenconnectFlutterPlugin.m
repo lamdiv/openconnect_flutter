@@ -1,7 +1,7 @@
 #import "OpenconnectFlutterPlugin.h"
-#import "NodeModel.h"
-#import "CheckConnectData.h"
 #import <ExtParser/ExtParser.h>
+#import "vpn_adapter_ios/NodeModel.h"
+#import "vpn_adapter_ios/CheckConnectData.h"
 
 @interface OpenconnectFlutterPlugin ()
 

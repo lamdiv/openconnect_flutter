@@ -14,9 +14,9 @@ A new Flutter plugin project.
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
+  s.dependency 'vpn_adapter_ios', '~> 1.0.0'
 
-  s.preserve_path = ['ext/ExtParser.framework','openconnect/openconnect.framework' ]
-  s.vendored_frameworks  = ['ext/ExtParser.framework','openconnect/openconnect.framework' ]
 
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386','OTHER_LDFLAGS' => ['-framework ExtParser','-framework openconnect']}
+  # Flutter.framework does not contain a i386 slice.
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386'}
 end

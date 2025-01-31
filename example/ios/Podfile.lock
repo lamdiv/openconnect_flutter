@@ -1,28 +1,34 @@
 PODS:
   - Flutter (1.0.0)
-  - integration_test (0.0.1):
-    - Flutter
   - openconnect_flutter (1.0.0):
     - Flutter
+    - vpn_adapter_ios (~> 1.0.0)
+  - vpn_adapter_ios (1.0.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - openconnect_flutter (from `.symlinks/plugins/openconnect_flutter/ios`)
+  - vpn_adapter_ios (from `https://github.com/NavidShokoufeh/vpn_adapter_ios.git`, tag `1.0.0`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  integration_test:
-    :path: ".symlinks/plugins/integration_test/ios"
   openconnect_flutter:
     :path: ".symlinks/plugins/openconnect_flutter/ios"
+  vpn_adapter_ios:
+    :git: https://github.com/NavidShokoufeh/vpn_adapter_ios.git
+    :tag: 1.0.0
+
+CHECKOUT OPTIONS:
+  vpn_adapter_ios:
+    :git: https://github.com/NavidShokoufeh/vpn_adapter_ios.git
+    :tag: 1.0.0
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  integration_test: 13825b8a9334a850581300559b8839134b124670
-  openconnect_flutter: 8ae286088516fb3459455e2ffd2d9941ea9691de
+  openconnect_flutter: 68ea1bf4df94a3120ba6c03ec26a0769d91b2cf0
+  vpn_adapter_ios: ef856cbfebcb146e300ca1bb9857fc376101dc45
 
-PODFILE CHECKSUM: 6e700dec67e6deac9b1c69bb14c49a2217a12d15
+PODFILE CHECKSUM: d489ea08e2158a73588c5149d5d4cb9c0678d2a2
 
 COCOAPODS: 1.15.2
