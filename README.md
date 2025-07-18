@@ -76,6 +76,55 @@ end
 
 Open openconnect_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/NavidShokoufeh/openconnect_flutter/refs/heads/main/example/ios/openconnect_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
 
+## 6. Configure Build Settings and Deployment Targets
+
+✅ **This step is required to avoid build issues and ensure proper runtime behavior.**
+
+---
+
+### A. Set iOS Deployment Target to **15.0**
+
+Set the deployment target to **15.0** for the following:
+
+- **Runner Project**
+- **Runner Target**
+- **openconnect_extension Target**
+
+You can configure this in Xcode by navigating to:
+
+```
+Build Settings > iOS Deployment Target
+```
+
+---
+
+### B. Remove Unnecessary Linker Flags
+
+- For the `**openconnect_extension**` target:
+  - Go to `Build Settings > Other Linker Flags`
+  - **Remove all linker flags**
+
+- For the `**Runner**` target:
+  - Go to `Build Settings > Other Linker Flags`
+  - **Remove** the `-ObjC` flag
+
+---
+
+### C. Add Required Frameworks to `openconnect_extension`
+
+In Xcode, go to:
+
+```
+openconnect_extension > Build Phases > Link Binary With Libraries
+```
+
+Click the `+` button and **add** the following:
+
+- `libc++.tbd`
+- `libresolv.tbd`
+
+
+
 # Usage
 
 ## Setting up the VPN
