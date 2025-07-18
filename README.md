@@ -100,13 +100,14 @@ Build Settings > iOS Deployment Target
 
 ### B. Remove Unnecessary Linker Flags
 
-- For the `**openconnect_extension**` target:
+- For the `openconnect_extension` target:
   - Go to `Build Settings > Other Linker Flags`
   - **Remove all linker flags**
 
-- For the `**Runner**` target:
+- For the `Runner` target:
   - Go to `Build Settings > Other Linker Flags`
-  - **Remove** the `-ObjC` flag
+  - Remove the `-ObjC` flag
+  - Remove other dublicate flags
 
 ---
 
